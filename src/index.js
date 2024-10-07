@@ -22,23 +22,25 @@ const navButtons = document.querySelectorAll(".nav-button");
 // helper function to reset the buttons on the navbar prior to the tab selection becoming active;
 function resetButtons() {
   navButtons.forEach((button) => {
-    button.style.backgroundColor = "aqua";
+    button.style.backgroundColor = "var(--neon-color)";
     button.style.opacity = ".5";
   });
 }
 
 // helper function to set styling on the active button;
 function setActiveButton(clickedButton) {
-  clickedButton.style.backgroundColor = "purple";
+  clickedButton.style.backgroundColor = "var(--neon-color)";
   clickedButton.style.opacity = "1";
+  clickedButton.style.borderShadow = "var(--neon-box-shadow)";
 }
 
 // callback function, evaluates the clicked item and gets it's data
 function getSelectedContent(event) {
-  resetButtons();
   const clickedButton = event.target;
-  setActiveButton(clickedButton);
   if (clickedButton.classList.contains("nav-button")) {
+    resetButtons();
+
+    setActiveButton(clickedButton);
     const selectedContent = clickedButton.dataset.target;
     selectedContent === "book"
       ? getBookContent(contentWrapper)

@@ -41,37 +41,97 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
-.nav-bar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: clamp(8px, 5vw, 300px);
-  height: 25vh;
-  background-color: antiquewhite;
-  padding-right: 2vw;
+/* end reset */
+:root {
+  --neon-color: #84cc16;
+  --neon-box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+    0 0 2rem var(--neon-color), 0 0 0.8rem var(--neon-color),
+    0 0 2.8rem var(--neon-color), inset 0 0 1.3rem var(--neon-color);
+  --neon-text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px var(--neon-color), 0 0 82px var(--neon-color),
+    0 0 92px var(--neon-color), 0 0 102px var(--neon-color),
+    0 0 151px var(--neon-color);
+  --content-background-color: #6b7280;
 }
 
+body {
+  font-family: "Playwrite DE Grund", cursive;
+  color: #fff;
+  background-color: #d1d5db;
+}
+h1,
+h2 {
+  font-family: "Sacramento", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: var(--neon-text-shadow);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 7vw, 4rem);
+  padding: 0.4rem;
+}
+
+.neon-sign {
+  color: #fff;
+  text-shadow: var(--neon-text-shadow);
+  font-size: clamp(2rem, 10vw, 5rem);
+  align-self: center;
+  margin: 2rem 4rem;
+  padding: 0.4em;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  box-shadow: var(--neon-box-shadow);
+}
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: clamp(8px, 3vw, 300px);
+  background-color: #010a01;
+  padding-right: 2vw;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(8px, 2vw, 300px);
+}
 .nav-button {
   border: none;
   border-radius: 2rem;
-  /* width:clamp( 16ch; */
-  width: clamp(16px, 24vw, 16ch);
   padding: 0.5ch 2ch;
   margin-bottom: 1rem;
-  background-color: aqua;
-  font-size: clamp(0.8rem, 1vw, 3rem);
+  background-color: var(--neon-color);
+  font-size: clamp(0.6rem, 1vw, 3rem);
 }
 
 #content {
   width: 80vw;
-  background-color: brown;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: var(--neon-box-shadow);
+  background-color: var(--content-background-color);
 }
 
+.content-div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media screen and (max-width: 600px) {
-  .nav-bar {
-    justify-content: center;
+  /* .nav-button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
   }
+  .nav-button {
+    margin: 0;
+  } */
 }
