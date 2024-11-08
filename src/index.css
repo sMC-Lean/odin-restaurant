@@ -51,13 +51,15 @@ h6 {
     0 0 42px var(--neon-color), 0 0 82px var(--neon-color),
     0 0 92px var(--neon-color), 0 0 102px var(--neon-color),
     0 0 151px var(--neon-color);
-  --content-background-color: #6b7280;
+  /* --content-background-color: #374151; */
+  --content-background-color: #111827;
 }
 
 body {
   font-family: "Playwrite DE Grund", cursive;
   color: #fff;
-  background-color: #d1d5db;
+  background: url("./images/bbq.jpg");
+  background-size: cover;
 }
 h1,
 h2 {
@@ -68,14 +70,18 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(1.5rem, 7vw, 4rem);
+  font-size: clamp(1.5rem, 7vw, 5rem);
   padding: 0.4rem;
+}
+
+p {
+  max-width: 66ch;
 }
 
 .neon-sign {
   color: #fff;
   text-shadow: var(--neon-text-shadow);
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(2rem, 10vw, 6rem);
   align-self: center;
   margin: 2rem 4rem;
   padding: 0.4em;
@@ -89,7 +95,7 @@ h1 {
   justify-content: flex-end;
   align-items: flex-end;
   gap: clamp(8px, 3vw, 300px);
-  background-color: #010a01;
+  background-color: #030712;
   padding-right: 2vw;
   position: relative;
   z-index: 1000;
@@ -114,16 +120,45 @@ h1 {
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: var(--neon-box-shadow);
+  /* box-shadow: var(--neon-box-shadow); */
   background-color: var(--content-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+  padding: 5rem;
 }
 
 .content-div {
   width: 60%;
   display: flex;
   flex-direction: column;
+  gap: 24px;
   align-items: center;
 }
+
+.left-div {
+  align-self: flex-start;
+}
+
+.center-div {
+  align-self: center;
+}
+
+.right-div {
+  align-self: flex-end;
+}
+
+.left-heading {
+  text-align: start;
+}
+
+#page-footer {
+  width: 100vw;
+  text-align: center;
+  background-color: #030712;
+  padding: 1ch 0;
+}
+
 @media screen and (max-width: 600px) {
   /* .nav-button-container {
     flex-direction: column;
