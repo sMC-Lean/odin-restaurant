@@ -34,14 +34,14 @@ function setActiveButton(clickedButton) {
   clickedButton.style.borderShadow = "var(--neon-box-shadow)";
 }
 
-// callback function, evaluates the clicked item and gets it's data
+// callback function for the event listener, clears existing content and sets new content and tab based on the target' data;
 function getSelectedContent(event) {
   const clickedButton = event.target;
   if (clickedButton.classList.contains("nav-button")) {
     resetButtons();
-
     setActiveButton(clickedButton);
     const selectedContent = clickedButton.dataset.target;
+    contentWrapper.innerHTML = "";
     selectedContent === "book"
       ? getBookContent(contentWrapper)
       : selectedContent === "menu"

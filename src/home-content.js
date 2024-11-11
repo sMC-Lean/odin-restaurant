@@ -3,9 +3,6 @@ import beef from "./images/beef.jpg";
 import steak from "./images/steak.jpg";
 
 export function getHomeContent(contentContainer) {
-  // clear the previous selected content from the display area;
-  contentContainer.innerHTML = "";
-
   // create first display element including children;
   const firstDiv = document.createElement("div");
   firstDiv.classList.add("content-div");
