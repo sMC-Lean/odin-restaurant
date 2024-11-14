@@ -60,6 +60,8 @@ body {
   color: #fff;
   background: url("./images/bbq.jpg");
   background-size: cover;
+  font-size: 2rem;
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 h1,
 h2 {
@@ -78,6 +80,9 @@ p {
   max-width: 66ch;
 }
 
+img {
+  min-width: 115px;
+}
 .neon-sign {
   color: #fff;
   text-shadow: var(--neon-text-shadow);
@@ -117,15 +122,15 @@ p {
 }
 
 #content {
-  width: 80vw;
+  /* width: 80vw; */
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  /* box-shadow: var(--neon-box-shadow); */
   background-color: var(--content-background-color);
   display: flex;
   flex-direction: column;
-  gap: 15vh;
-  padding: 5rem;
+  gap: 8vh;
+  padding: 3vw 0;
 }
 
 .content-div {
@@ -156,6 +161,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .menu-item {
   width: 80%;
@@ -163,21 +169,61 @@ p {
   justify-content: space-between;
 }
 
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#booking-form > input {
+  max-width: 30ch;
+  border: none;
+  border-radius: 0.5rem;
+  padding-left: 0.5ch;
+}
+
+#booking-form > textarea:valid,
+#booking-form > select:valid,
+#booking-form > input:valid {
+  box-shadow: var(--neon-box-shadow);
+}
+
+#booking-form > textarea,
+#booking-form > select {
+  border-radius: 0.5rem;
+  padding-left: 0.5ch;
+}
+
+#booking-form > input#submit-button {
+  box-shadow: none;
+}
+
+#comments {
+  width: clamp(20ch, 40%, 66ch);
+}
+
+#submit-button {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5ch 1ch;
+  margin-bottom: 1rem;
+  max-width: 240px;
+  background-color: var(--neon-color);
+  font-size: clamp(0.9rem, 1vw, 3rem);
+  text-align: center;
+}
 #page-footer {
   width: 100vw;
   text-align: center;
   background-color: #030712;
   padding: 1ch 0;
+  font-size: clamp(0.6rem, 0.5vw, 1.2rem);
+  /* font-size: 0.5vw; */
 }
 
 @media screen and (max-width: 600px) {
-  /* .nav-button-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 12px;
+  .menu-div {
+    width: 95%;
   }
-  .nav-button {
-    margin: 0;
-  } */
 }
