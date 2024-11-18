@@ -19,6 +19,14 @@ const navBar = document.querySelector(".nav-bar");
 const contentWrapper = document.querySelector("#content");
 const navButtons = document.querySelectorAll(".nav-button");
 
+// console output to check mode;
+
+if (process.env.NODE_ENV !== "production") {
+  console.log("dev mode loaded");
+} else if (process.env.NODE_ENV === "production") {
+  console.log("prod environment loaded");
+}
+
 // helper function to reset the buttons on the navbar prior to the tab selection becoming active;
 function resetButtons() {
   navButtons.forEach((button) => {
